@@ -35,10 +35,67 @@ boardNextTurn[x][y] = 1;
 //Caso del centro de la matriz: 8 vecinos (E)
 for (x === 1; x < board.length - 1; x++ ){
   for(y === 1; y < board.length - 1; y++ ){
-
   }
 }
-
+//Buscador de vecinos.
+//Caso A:
+for (x === 1; x < board.length - 1; x++ ){
+  for(y === 1; y < board.length - 1; y++ ){
+    if(board[x][y] === 0){
+      counterForDeaths = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+    }
+    else if(board[x][y] === 1){
+      counterForAlives = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForAlives++;
+    }
+  }
+}
 //Caso de las 4 esquinas: 3 vecinos.
 if(x === 0 && y === 0){}//A
 else if(x === board.length - 1, y === 0){}//B
