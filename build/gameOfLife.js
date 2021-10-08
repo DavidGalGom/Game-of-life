@@ -5,6 +5,24 @@ let board = [
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
 ];
+let boardNextStage = [];
+
+//Para las celdas en vivas/true/1 
+//Si tiene 2 o 3 vecinos vivos sigue vivo, sino muere
+let counterForAlives = 0;
+if (counterForAlives < 2 || counterForAlives > 3){
+ boardNextStage[x][y] = 0;
+}
+else if (counterForAlives === 2 || counterForAlives === 3){
+boardNextStage[x][y] = 1;
+}
+
+//Para las celdas en muertas/false/0
+// Si tiene 3 vecinos vivos revive
+let counterForDeaths = 0;
+if( counterForDeaths === 3){
+boardNextStage[x][y] = 1;
+}
 
 //Caso del centro de la matriz: 8 vecinos.
 for (x === 1; x < board.length - 1; x++ ){
