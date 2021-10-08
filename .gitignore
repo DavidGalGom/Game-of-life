@@ -105,3 +105,7 @@ dist
 
 # sonarcube files
 .scannerwork
+
+# css y css.map
+/build/style.css
+/build/style.css.map
