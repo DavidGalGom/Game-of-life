@@ -5,7 +5,13 @@ let board = [
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
 ];
-let boardNextTurn = [];
+let boardNextTurn = [
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+];
 
 /*
 [A,b,b,b,B]
@@ -35,10 +41,67 @@ boardNextTurn[x][y] = 1;
 //Caso del centro de la matriz: 8 vecinos (E)
 for (x === 1; x < board.length - 1; x++ ){
   for(y === 1; y < board.length - 1; y++ ){
-
   }
 }
-
+//Buscador de vecinos.
+//Caso E:
+for (x === 1; x < board.length - 1; x++ ){
+  for(y === 1; y < board.length - 1; y++ ){
+    if(board[x][y] === 0){
+      counterForDeaths = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+    }
+    else if(board[x][y] === 1){
+      counterForAlives = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForAlives++;
+    }
+  }
+}
 //Caso de las 4 esquinas: 3 vecinos.
 if(x === 0 && y === 0){}//A
 else if(x === board.length - 1, y === 0){}//B
@@ -162,3 +225,168 @@ if(x === board.length - 1){
 if(y === board.length - 1){
   for(x === 1; x < board.length - 1, x++){}
 }//d
+
+//Caso a: Vecinos
+if(x === 0){
+  for(y === 1; y < board.length - 1, y++){
+   if(board[x][y] === 0){
+      counterForDeaths = 0;
+      if(board[x][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForDeaths++;
+      }    
+      else if(board[x][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+    }
+    else if(board[x][y] === 1){
+      counterForAlives = 0;
+      if(board[x][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForAlives++;
+    }
+  } 
+  }
+}
+//Caso b: Vecinos
+if(y === 0){
+  for(x === 1; x < board.length - 1, x++){
+   if(board[x][y] === 0){
+      counterForDeaths = 0;
+      if(board[x - 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+    }
+    else if(board[x][y] === 1){
+      counterForAlives = 0;
+      if(board[x - 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y + 1] === 1){
+      counterForAlives++;
+    }
+  } 
+  }
+}
+//Caso c: Vecinos
+if(x === board.length - 1){
+  for(y === 1; y < board.length - 1, y++){
+  if(board[x][y] === 0){
+      counterForDeaths = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForDeaths++;
+      }
+    }
+    else if(board[x][y] === 1){
+      counterForAlives = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y + 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y + 1] === 1){
+      counterForAlives++;
+      }
+  }
+  }
+}
+//Caso d: Vecinos
+if(y === board.length - 1){
+  for(x === 1; x < board.length - 1, x++){
+  if(board[x][y] === 0){
+      counterForDeaths = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForDeaths++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForDeaths++;
+      }
+    }
+    else if(board[x][y] === 1){
+      counterForAlives = 0;
+      if(board[x - 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y - 1] === 1){
+      counterForAlives++;
+      }
+      else if(board[x - 1][y] === 1){
+      counterForAlives++;
+      }
+      else if(board[x + 1][y] === 1){
+      counterForAlives++;
+      }
+  }  
+  }
+}
