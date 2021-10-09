@@ -497,4 +497,7 @@ function walkOverTheBoard(board) {
   return boardNextTurn;
 }
 walkOverTheBoard(board);
-console.log(boardNextTurn);
+
+module.exports = {
+  walkOverTheBoard,
+};
