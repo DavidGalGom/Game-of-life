@@ -1,5 +1,3 @@
-//const buttonPlay = document.getElementById("button");
-
 let board = [
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
@@ -7,17 +5,7 @@ let board = [
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
 ];
-
-// let boardNextTurn = [
-//   [0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0],
-// ];
 function changeColor(item) {
-  // console.log(item.style.backgroundColor);
-  // console.log(item);
   const position = item.id.split("-");
   const row = position[0];
   const cell = position[1];
@@ -29,13 +17,6 @@ function changeColor(item) {
     board[row][cell] = 0;
   }
 }
-/*
-[A,b,b,b,B]
-[a,E,E,E,c]
-[a,E,E,E,c]
-[a,E,E,E,c]
-[D,d,d,d,C]
-*/
 x = 0;
 y = 0;
 function upperLeftCorner(board) {
@@ -481,9 +462,12 @@ function centerBoard(board) {
   }
 }
 function intervalTime() {
-  setInterval(() => {
+  stopLoop = setInterval(() => {
     board = walkOverTheBoard(board);
   }, 1000);
+}
+function stop() {
+  clearInterval(stopLoop);
 }
 function walkOverTheBoard(board) {
   console.log(board);
@@ -523,7 +507,7 @@ function walkOverTheBoard(board) {
   }
   return boardNextTurn;
 }
-//buttonPlay.addEventListener("click", () => intervalTime());
+
 //walkOverTheBoard(board);
 
 module.exports = {
