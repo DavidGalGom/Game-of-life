@@ -1,8 +1,10 @@
+//const buttonPlay = document.querySelector(".start-button");
+
 let board = [
   [0, 0, 0, 0, 0],
-  [0, 0, 1, 0, 0],
-  [0, 0, 0, 1, 0],
-  [0, 1, 1, 1, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
 ];
 
@@ -509,6 +511,7 @@ function walkOverTheBoard(board) {
   }
   return boardNextTurn;
 }
+//buttonPlay.addEventListener("click", () => walkOverTheBoard(board));
 walkOverTheBoard(board);
 
 module.exports = {

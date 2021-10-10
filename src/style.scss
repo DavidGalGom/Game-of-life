@@ -31,6 +31,7 @@ body {
   width: 1000px;
 }
 .board-content {
+  padding: 30px;
   display: flex;
   align-items: center;
   align-content: center;
@@ -38,7 +39,6 @@ body {
   border: solid white 1px;
   height: 500px;
   width: 750px;
-  padding-left: 175px;
 }
 .board-description {
   display: flex;
@@ -83,4 +83,16 @@ body {
   height: 80px;
   width: 80px;
   border: solid white 1px;
+}
+.cell:hover {
+  cursor: pointer;
+}
+.start-button {
+  margin-right: 50px;
+  height: 50px;
+  width: 100px;
+  background-color: brown;
+}
+.start-button:hover {
+  cursor: pointer;
 }
