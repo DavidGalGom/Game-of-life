@@ -510,6 +510,19 @@ function walkOverTheBoard(board) {
         : (document.getElementById(x + "-" + y).style.backgroundColor = "");
     }
   }
+  for (let x = 0; x < board.length; x++) {
+    for (let y = 0; y < board.length; y++) {
+      if (boardNextTurn[x][y] === 1) {
+        numberALives++;
+      } else if (boardNextTurn[x][y] === 0) {
+        numberDeaths++;
+      }
+    }
+  }
+  document.getElementById("alive").innerHTML =
+    "Number of living cells :" + numberALives;
+  document.getElementById("death").innerHTML =
+    "Turn Number of dead cells :" + numberDeaths;
   return boardNextTurn;
 }
 
