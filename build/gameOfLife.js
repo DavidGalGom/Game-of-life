@@ -462,8 +462,11 @@ function centerBoard(board) {
   }
 }
 function intervalTime() {
+  let numberTurns = 0;
   stopLoop = setInterval(() => {
     board = walkOverTheBoard(board);
+    numberTurns++;
+    document.getElementById("turn").innerHTML = "Turn Number :" + numberTurns;
   }, 1000);
 }
 function stop() {
@@ -472,6 +475,8 @@ function stop() {
 function walkOverTheBoard(board) {
   console.log(board);
   let boardNextTurn = [];
+  let numberALives = 0;
+  let numberDeaths = 0;
   for (x = 0; x < board.length; x++) {
     boardNextTurn[x] = [];
     for (y = 0; y < board.length; y++) {
