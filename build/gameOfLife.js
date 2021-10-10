@@ -13,7 +13,20 @@ let boardNextTurn = [
   [0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0],
 ];
-
+function changeColor(item) {
+  console.log(item.style.backgroundColor);
+  console.log(item);
+  const position = item.id.split("-");
+  const row = position[0];
+  const cell = position[1];
+  if (item.style.backgroundColor === "") {
+    item.style.backgroundColor = "grey";
+    board[row][cell] = 1;
+  } else if (item.style.backgroundColor === "grey") {
+    item.style.backgroundColor = "";
+    board[row][cell] = 0;
+  }
+}
 /*
 [A,b,b,b,B]
 [a,E,E,E,c]

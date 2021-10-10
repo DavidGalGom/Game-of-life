@@ -70,11 +70,7 @@ body {
   width: 400px;
   border: solid white 1px;
 }
-.row1,
-.row2,
-.row3,
-.row4,
-.row5 {
+.row {
   display: flex;
   flex-direction: row;
   background-color: black;
@@ -82,11 +78,7 @@ body {
   width: 400px;
   border: solid white 1px;
 }
-.column1,
-.column2,
-.column3,
-.column4,
-.column5 {
+.cell {
   background-color: black;
   height: 80px;
   width: 80px;
