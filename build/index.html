@@ -12,14 +12,25 @@
       <h1 class="web-title">GAME OF LIFE</h1>
       <div class="board-container">
         <div class="board-content">
-          <button
-            type="button"
-            class="start-button"
-            id="button"
-            onclick="intervalTime()"
-          >
-            <p>PLAY</p>
-          </button>
+          <div class="button-container">
+            <button
+              type="button"
+              class="start-button"
+              id="button"
+              onclick="intervalTime()"
+            >
+              <p>PLAY</p>
+            </button>
+            <button
+              type="button"
+              class="stop-button"
+              id="button"
+              onclick="stop()"
+            >
+              <p>STOP</p>
+            </button>
+          </div>
+
           <div class="board-size">
             <div class="row">
               <div class="cell" onclick="changeColor(this)" id="0-0"></div>
