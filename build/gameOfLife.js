@@ -462,7 +462,6 @@ function centerBoard(board) {
   }
 }
 function intervalTime() {
-  let numberTurns = 0;
   stopLoop = setInterval(() => {
     board = walkOverTheBoard(board);
     numberTurns++;
@@ -472,6 +471,18 @@ function intervalTime() {
 function stop() {
   clearInterval(stopLoop);
 }
+function reset() {
+  for (let x = 0; x < board.length; x++) {
+    for (let y = 0; y < board.length; y++) {
+      board[x][y] = 0;
+      numberTurns = 0;
+      document.getElementById(x + "-" + y).style.backgroundColor = "";
+    }
+  }
+  stop();
+  return board;
+}
+let numberTurns = 0;
 function walkOverTheBoard(board) {
   console.log(board);
   let boardNextTurn = [];
