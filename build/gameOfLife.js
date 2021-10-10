@@ -1,4 +1,4 @@
-//const buttonPlay = document.querySelector(".start-button");
+//const buttonPlay = document.getElementById("button");
 
 let board = [
   [0, 0, 0, 0, 0],
@@ -8,16 +8,16 @@ let board = [
   [0, 0, 0, 0, 0],
 ];
 
-let boardNextTurn = [
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-];
+// let boardNextTurn = [
+//   [0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0],
+// ];
 function changeColor(item) {
-  console.log(item.style.backgroundColor);
-  console.log(item);
+  // console.log(item.style.backgroundColor);
+  // console.log(item);
   const position = item.id.split("-");
   const row = position[0];
   const cell = position[1];
@@ -480,8 +480,16 @@ function centerBoard(board) {
     }
   }
 }
+function intervalTime() {
+  setInterval(() => {
+    board = walkOverTheBoard(board);
+  }, 1000);
+}
 function walkOverTheBoard(board) {
+  console.log(board);
+  let boardNextTurn = [];
   for (x = 0; x < board.length; x++) {
+    boardNextTurn[x] = [];
     for (y = 0; y < board.length; y++) {
       if (x === 0 && y === 0) {
         boardNextTurn[x][y] = upperLeftCorner(board);
@@ -507,12 +515,16 @@ function walkOverTheBoard(board) {
       } else if (y === board.length - 1 && x > 0 && x < board.length) {
         boardNextTurn[x][y] = rightBorder(board);
       }
+
+      boardNextTurn[x][y] === 1
+        ? (document.getElementById(x + "-" + y).style.backgroundColor = "grey")
+        : (document.getElementById(x + "-" + y).style.backgroundColor = "");
     }
   }
   return boardNextTurn;
 }
-//buttonPlay.addEventListener("click", () => walkOverTheBoard(board));
-walkOverTheBoard(board);
+//buttonPlay.addEventListener("click", () => intervalTime());
+//walkOverTheBoard(board);
 
 module.exports = {
   walkOverTheBoard,
