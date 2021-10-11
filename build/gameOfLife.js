@@ -533,7 +533,7 @@ function walkOverTheBoard(board) {
   document.getElementById("alive").innerHTML =
     "Number of living cells :" + numberALives;
   document.getElementById("death").innerHTML =
-    "Turn Number of dead cells :" + numberDeaths;
+    "Number of dead cells :" + numberDeaths;
   return boardNextTurn;
 }
 
