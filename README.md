@@ -1,3 +1,3 @@
 # Game-of-life
 
-A minigame done with JavaScript Vanilla forr practise array methods
+A minigame done with JavaScript Vanilla to practise array methods
